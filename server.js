@@ -1,15 +1,23 @@
 import { ApolloServer, gql } from "apollo-server";
 import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core";
+import { users } from "./tempDB.js";
 
 const typeDefs = gql`
   type Query {
-    greet: String
+    users: [User]
+  }
+  type User {
+    id: ID
+    FirstName: String
+    LastName: String
+    email: String
+    password: String
   }
 `;
 
 const resolvers = {
   Query: {
-    greet: () => "Hello world!",
+    users: () => users,
   },
 };
 

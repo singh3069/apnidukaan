@@ -1,0 +1,6 @@
+---------------------------------
+query getAllUsers{
+  users{
+    FirstName
+  }
+}
