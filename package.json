@@ -1,17 +1,17 @@
 {
-  "dependencies": {
-    "apollo-server": "^3.10.0",
-    "apollo-server-core": "^3.10.0",
-    "graphql": "^16.5.0"
-  },
-  "scripts": {
-    "start": "node server.js"
-  },
   "name": "apnidukaan",
   "version": "1.0.0",
   "main": "server.js",
   "type": "module",
-  "devDependencies": {},
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "apollo-server": "^3.10.0",
+    "apollo-server-core": "^3.10.0",
+    "graphql": "^16.5.0",
+    "nodemon": "^2.0.19"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/singh3069/apnidukaan.git"
