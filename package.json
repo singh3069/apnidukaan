@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "apollo-server": "^3.10.0",
+    "apollo-server-core": "^3.10.0",
+    "graphql": "^16.5.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "apnidukaan",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/singh3069/apnidukaan.git"
+  },
+  "keywords": [],
+  "author": "'Saurabh'",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/singh3069/apnidukaan/issues"
+  },
+  "homepage": "https://github.com/singh3069/apnidukaan#readme",
+  "description": ""
+}
