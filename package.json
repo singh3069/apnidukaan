@@ -10,6 +10,7 @@
   "name": "apnidukaan",
   "version": "1.0.0",
   "main": "server.js",
+  "type": "module",
   "devDependencies": {},
   "repository": {
     "type": "git",
