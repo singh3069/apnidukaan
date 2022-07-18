@@ -8,9 +8,20 @@ export const users = [
   },
   {
     id: "2",
-    FirstName: "Jhony",
+    FirstName: "Johnny",
     LastName: "Doe",
-    email: "jhony@gmail.com",
+    email: "johnny@gmail.com",
     password: "123456",
+  },
+];
+
+export const previousOrders = [
+  {
+    name: "Jeans",
+    id: "1",
+  },
+  {
+    name: "Shirt",
+    id: "2",
   },
 ];

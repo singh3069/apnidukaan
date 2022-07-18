@@ -1,9 +1,10 @@
 import { ApolloServer, gql } from "apollo-server";
 import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core";
-import { users } from "./tempDB.js";
+import { users, previousOrders } from "./tempDB.js";
 
 const typeDefs = gql`
   type Query {
+    previousOrders: [PreviousOrder]
     users: [User]
   }
   type User {
@@ -13,17 +14,24 @@ const typeDefs = gql`
     email: String
     password: String
   }
+
+  type PreviousOrder {
+    name: String
+    id: ID
+  }
 `;
 
 const resolvers = {
   Query: {
     users: () => users,
+    previousOrders: () => previousOrders,
   },
 };
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  // for playground
   plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
 });
 
