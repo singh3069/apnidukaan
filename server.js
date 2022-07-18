@@ -1,35 +1,40 @@
 import { ApolloServer, gql } from "apollo-server";
 import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core";
-import { users, previousOrders } from "./tempDB.js";
+import { users, allUsersPreviousPurchasedData } from "./tempDB.js";
 
 const typeDefs = gql`
   type Query {
-    previousOrders: [PreviousOrder]
+    previousOrdersOfAllUsers: [PreviousOrder]
+    user(id: ID!): User
     users: [User]
   }
   type User {
-    id: ID
+    id: ID!
     FirstName: String
     LastName: String
     email: String
     password: String
-    previousOrder: [PreviousOrder]
+    previousOrderOfSingleUser: [PreviousOrder]
   }
 
   type PreviousOrder {
     name: String
-    by: ID
+    by: ID!
   }
 `;
 
 const resolvers = {
   Query: {
     users: () => users,
-    previousOrders: () => previousOrders,
+    user: (_, args) => users.find((user) => user.id === args.id),
+    previousOrdersOfAllUsers: () => allUsersPreviousPurchasedData,
   },
   User: {
-    previousOrder: (user) => {
-      return previousOrders.filter((order) => order.by === user.id);
+    // finding the purchased items by the user on the basis of the user id
+    previousOrderOfSingleUser: (user) => {
+      return allUsersPreviousPurchasedData.filter(
+        (order) => order.by === user.id
+      );
     },
   },
 };

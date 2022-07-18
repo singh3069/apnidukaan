@@ -15,7 +15,7 @@ export const users = [
   },
 ];
 
-export const previousOrders = [
+export const allUsersPreviousPurchasedData = [
   {
     name: "Jeans",
     by: "1",

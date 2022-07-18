@@ -7,7 +7,30 @@ query getAllUsers{
 
 --------------------
 query getPerviousPurchasedData{
-  previousOrders{
+  previousOrdersOfAllUsers{
     name
+    by
+  }
+}
+
+--------------------------
+query getUserByID{
+  user(id:"2"){
+     FirstName
+    	id
+    previousOrderOfSingleUser{
+      name
+    }
+  }
+}
+
+---------------getting user by id dynamically
+query getUserByID($userID:ID!){
+  user(id:$userID){
+     FirstName
+    	id
+    previousOrderOfSingleUser{
+      name
+    }
   }
 }
