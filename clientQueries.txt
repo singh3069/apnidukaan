@@ -4,3 +4,10 @@ query getAllUsers{
     FirstName
   }
 }
+
+--------------------
+query getPerviousPurchasedData{
+  previousOrders{
+    name
+  }
+}

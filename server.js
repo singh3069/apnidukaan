@@ -13,11 +13,12 @@ const typeDefs = gql`
     LastName: String
     email: String
     password: String
+    previousOrder: [PreviousOrder]
   }
 
   type PreviousOrder {
     name: String
-    id: ID
+    by: ID
   }
 `;
 
@@ -25,6 +26,11 @@ const resolvers = {
   Query: {
     users: () => users,
     previousOrders: () => previousOrders,
+  },
+  User: {
+    previousOrder: (user) => {
+      return previousOrders.filter((order) => order.by === user.id);
+    },
   },
 };
 

@@ -18,10 +18,10 @@ export const users = [
 export const previousOrders = [
   {
     name: "Jeans",
-    id: "1",
+    by: "1",
   },
   {
     name: "Shirt",
-    id: "2",
+    by: "2",
   },
 ];
