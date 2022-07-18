@@ -1,7 +1,7 @@
 ---------------------------------
 query getAllUsers{
   users{
-    FirstName
+    firstName
   }
 }
 
@@ -16,7 +16,7 @@ query getPerviousPurchasedData{
 --------------------------
 query getUserByID{
   user(id:"2"){
-     FirstName
+     firstName
     	id
     previousOrderOfSingleUser{
       name
@@ -27,7 +27,7 @@ query getUserByID{
 ---------------getting user by id dynamically
 query getUserByID($userID:ID!){
   user(id:$userID){
-     FirstName
+     firstName
     	id
     previousOrderOfSingleUser{
       name

@@ -1,4 +1,5 @@
 import { users, allUsersPreviousPurchasedData } from "./tempDB.js";
+import { randomBytes } from "crypto";
 
 const resolvers = {
   Query: {
@@ -12,6 +13,21 @@ const resolvers = {
       return allUsersPreviousPurchasedData.filter(
         (order) => order.by === user.id
       );
+    },
+  },
+  Mutation: {
+    signUpUser: (_, args) => {
+      const id = randomBytes(2).toString("hex");
+      const newUser = {
+        id,
+        firstName: args.firstName,
+        lastName: args.lastName,
+        email: args.email,
+        password: args.password,
+      };
+
+      users.push(newUser);
+      return users.find((user) => user.id == id);
     },
   },
 };

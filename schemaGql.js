@@ -8,8 +8,8 @@ const typeDefs = gql`
   }
   type User {
     id: ID!
-    FirstName: String
-    LastName: String
+    firstName: String
+    lastName: String
     email: String
     password: String
     previousOrderOfSingleUser: [PreviousOrder]
@@ -18,6 +18,15 @@ const typeDefs = gql`
   type PreviousOrder {
     name: String
     by: ID!
+  }
+
+  type Mutation {
+    signUpUser(
+      firstName: String!
+      lastName: String!
+      email: String!
+      password: String!
+    ): User
   }
 `;
 
