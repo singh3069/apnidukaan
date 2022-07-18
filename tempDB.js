@@ -21,6 +21,10 @@ export const allUsersPreviousPurchasedData = [
     by: "1",
   },
   {
+    name: "Top",
+    by: "1",
+  },
+  {
     name: "Shirt",
     by: "2",
   },
