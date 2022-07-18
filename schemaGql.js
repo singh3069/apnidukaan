@@ -21,12 +21,14 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    signUpUser(
-      firstName: String!
-      lastName: String!
-      email: String!
-      password: String!
-    ): User
+    signUpUser(newUser: UserInput!): User
+  }
+
+  input UserInput {
+    firstName: String!
+    lastName: String!
+    email: String!
+    password: String!
   }
 `;
 
