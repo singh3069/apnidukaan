@@ -16,17 +16,14 @@ const resolvers = {
     },
   },
   Mutation: {
-    signUpUser: (_, args) => {
-      const id = randomBytes(2).toString("hex");
-      const newUser = {
+    signUpUser: (_, { newUser }) => {
+      const id = randomBytes(4).toString("hex");
+      const newUserInput = {
         id,
-        firstName: args.firstName,
-        lastName: args.lastName,
-        email: args.email,
-        password: args.password,
+        ...newUser,
       };
 
-      users.push(newUser);
+      users.push(newUserInput);
       return users.find((user) => user.id == id);
     },
   },
